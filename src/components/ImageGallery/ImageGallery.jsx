@@ -1,6 +1,13 @@
-import { GalleryList } from './ImageGallery';
+import { Gallery } from './ImageGallery.styled';
+import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 
-const ImageGallery = () => {
-  <GalleryList></GalleryList>;
+const ImageGallery = ({ images }) => {
+  return (
+    <Gallery>
+      {images.map(image => (
+        <ImageGalleryItem key={image.id} image={image} />
+      ))}
+    </Gallery>
+  );
 };
 export default ImageGallery;
